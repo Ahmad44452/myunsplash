@@ -41,7 +41,7 @@ router.route('/addimg').post(async (req, res) => {
 
 router.route('/allimages').get(async (req, res) => {
   try {
-    const images = await ImgModel.find();
+    const images = await ImgModel.find().sort({ date: -1 });
 
     return res.status(200).json(images);
   } catch (error) {
@@ -56,7 +56,7 @@ router.route('/allimages').get(async (req, res) => {
 router.route('/searchimages/:searchQuery').get(async (req, res) => {
   try {
 
-    const images = await ImgModel.find({ $text: { $search: req.params.searchQuery } });
+    const images = await ImgModel.find({ $text: { $search: req.params.searchQuery } }).sort({ date: -1 });
 
     return res.status(200).json(images);
   } catch (error) {

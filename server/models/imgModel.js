@@ -16,6 +16,10 @@ const imgSchema = new mongoose.Schema({
         throw new Error("Invalid image URL")
       }
     }
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 

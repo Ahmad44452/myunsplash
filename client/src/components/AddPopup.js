@@ -49,7 +49,7 @@ const AddPopup = ({ setPopupShowing, getImagesApi }) => {
           </Stl.ErrorMessage>
 
           <Stl.ButtonGroup textAlign="right">
-            <Stl.CancelButton onClick={(e) => { e.preventDefault(); setPopupShowing(false); }}>Cancel</Stl.CancelButton>
+            <Stl.CancelButton type='button' onClick={(e) => { e.preventDefault(); setPopupShowing(false); }}>Cancel</Stl.CancelButton>
             <GreenButton type='submit'>Submit</GreenButton>
           </Stl.ButtonGroup>
         </form>
