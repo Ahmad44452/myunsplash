@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require('cors');
 
 
 
@@ -20,6 +21,11 @@ mongoose.connect(mongoUri, {
 
 
 //////////// APPLY MIDDLEWARES
+var corsOptions = {
+  origin: process.env.FRONTEND_URI,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 

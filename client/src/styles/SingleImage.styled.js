@@ -29,6 +29,7 @@ export const HoverText = styled.p`
   position: absolute;
   bottom: 32px;
   left: 24px;
+  padding-right: 1rem;
   color: #fff;
   font-weight: 700;
   font-size: 2rem;
