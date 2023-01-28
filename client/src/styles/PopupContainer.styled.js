@@ -53,6 +53,11 @@ export const Input = styled.input`
   }
 `;
 
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 1.2rem;
+`
+
 export const ButtonGroup = styled.div`
   /* text-align: right; */
   margin-top: 1.5rem;

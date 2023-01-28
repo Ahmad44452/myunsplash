@@ -10,13 +10,16 @@ const imgSchema = new mongoose.Schema({
   imgurl: {
     type: String,
     unique: [true, "Image already exists!"],
+    required: [true, "Image url is required"],
     validate(value) {
       if (!validator.isURL(value)) {
         throw new Error("Invalid image URL")
       }
     }
   }
-})
+});
+
+imgSchema.index({ name: 'text', 'label': 'text' });
 
 const ImgModel = mongoose.model("Img", imgSchema);
 module.exports = { ImgModel };
